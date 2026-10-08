@@ -29,7 +29,7 @@ class Reaction extends Model
 
     public function getTable(): string
     {
-        return config('comments.table_prefix', '').'comment_reactions';
+        return config('comments.table_prefix', 'ruvelo_').'comment_reactions';
     }
 
     /**

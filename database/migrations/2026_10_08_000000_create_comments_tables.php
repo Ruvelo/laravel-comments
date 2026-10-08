@@ -10,7 +10,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        $prefix = config('comments.table_prefix', '');
+        $prefix = config('comments.table_prefix', 'ruvelo_');
 
         Schema::create($prefix.'comments', function (Blueprint $table) {
             $table->id();
@@ -42,7 +42,7 @@ return new class extends Migration
 
     public function down(): void
     {
-        $prefix = config('comments.table_prefix', '');
+        $prefix = config('comments.table_prefix', 'ruvelo_');
 
         Schema::dropIfExists($prefix.'comment_reactions');
         Schema::dropIfExists($prefix.'comments');

@@ -70,7 +70,7 @@ class Comment extends Model
 
     public function getTable(): string
     {
-        return config('comments.table_prefix', '').'comments';
+        return config('comments.table_prefix', 'ruvelo_').'comments';
     }
 
     /**

@@ -205,13 +205,14 @@ return [
     | Storage
     |--------------------------------------------------------------------------
     |
-    | Two tables: {prefix}comments and {prefix}comment_reactions. Set
+    | Two tables: {prefix}comments and {prefix}comment_reactions. The default
+    | prefix keeps clear of the `comments` table many apps already have. Set
     | `run_migrations` to false if you publish the migration and run it
     | yourself.
     |
     */
 
-    'table_prefix' => '',
+    'table_prefix' => 'ruvelo_',
 
     'run_migrations' => true,
 

@@ -198,7 +198,7 @@ php artisan vendor:publish --tag=comments-config
 | `markdown.options` | `[]` | CommonMark options. `html_input` and `allow_unsafe_links` can't be loosened |
 | `layout` | `null` | Your layout view for the moderation page; `null` uses the package's |
 | `layout_section` | `content` | The section the moderation page fills in your layout |
-| `table_prefix` | `''` | Tables are `{prefix}comments` and `{prefix}comment_reactions` |
+| `table_prefix` | `ruvelo_` | Tables are `ruvelo_comments` and `ruvelo_comment_reactions`, clear of any `comments` table your app already has |
 | `run_migrations` | `true` | Set to `false` if you publish and run the migration yourself |
 
 ## Making it look like your app
