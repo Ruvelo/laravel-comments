@@ -6,6 +6,12 @@ All notable changes to this project are documented here. The format follows
 
 ## [Unreleased]
 
+## [1.1.0] - 2026-10-08
+
+### Added
+
+- Laravel Boost guidelines in `resources/boost/guidelines/core.blade.php`: `php artisan boost:install` offers them to apps that use Laravel Boost, so AI coding agents use the package the intended way.
+
 ## [1.0.0] - 2026-10-08
 
 First release.
@@ -29,5 +35,6 @@ First release.
 - `Comment::factory()` for tests in host apps.
 - Ruvelo house style UI: light and dark, scoped styles, themable through CSS variables.
 
-[Unreleased]: https://github.com/Ruvelo/laravel-comments/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/Ruvelo/laravel-comments/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/Ruvelo/laravel-comments/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/Ruvelo/laravel-comments/releases/tag/v1.0.0
