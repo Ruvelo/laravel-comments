@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Ruvelo\Comments\Tests\Feature;
 
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Route;
@@ -197,6 +198,20 @@ class ThreadViewTest extends TestCase
             ->assertSee('id="edit-'.$comment->id.'"', false)
             ->assertSee('Original text</textarea>', false)
             ->assertSee('Save changes');
+    }
+
+    public function test_the_component_passes_attributes_through_and_styles_once(): void
+    {
+        $post = $this->newPost();
+        $html = Blade::render(
+            '<x-comments::thread :for="$post" data-theme="light" class="mt-8" /><x-comments::thread :for="$post" />',
+            ['post' => $post],
+        );
+
+        $this->assertStringContainsString('class="comments mt-8" data-theme="light"', $html);
+        $twice = view('two-threads', ['post' => $post])->render();
+        $this->assertSame(1, substr_count($twice, '--comments-accent: #3d4eff'));
+        $this->assertSame(1, substr_count($twice, '<script>'));
     }
 
     public function test_a_custom_gate_can_stop_people_commenting(): void
