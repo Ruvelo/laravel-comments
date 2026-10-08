@@ -1,0 +1,81 @@
+{
+    "name": "ruvelo/laravel-comments",
+    "description": "Free, polished comments for any Eloquent model: threads, Markdown, reactions, mentions and moderation. Blade or JSON, no Livewire required.",
+    "keywords": [
+        "laravel",
+        "comments",
+        "threads",
+        "markdown",
+        "reactions",
+        "moderation",
+        "eloquent"
+    ],
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://ruvelo.github.io/laravel-comments/",
+    "authors": [
+        {
+            "name": "François Bultez",
+            "homepage": "https://github.com/francoisbultez",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "laravel/framework": "^12.4.1|^13.0",
+        "league/commonmark": "^2.6"
+    },
+    "require-dev": {
+        "larastan/larastan": "^3.13",
+        "laravel/pint": "^1.32",
+        "orchestra/testbench": "^10.0|^11.0",
+        "phpunit/phpunit": "^11.5|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Ruvelo\\Comments\\": "src/",
+            "Ruvelo\\Comments\\Database\\Factories\\": "database/factories/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ruvelo\\Comments\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ruvelo\\Comments\\CommentsServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "lint": "pint --test",
+        "format": "pint",
+        "analyse": "phpstan analyse --memory-limit=1G",
+        "check": [
+            "@lint",
+            "@analyse",
+            "@test"
+        ],
+        "demo": "php demo/build.php build/site && cp -r art build/site/art && echo 'Serve it: php -S 127.0.0.1:8000 -t build, then open /site/'"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "support": {
+        "issues": "https://github.com/Ruvelo/laravel-comments/issues",
+        "source": "https://github.com/Ruvelo/laravel-comments"
+    },
+    "scripts-descriptions": {
+        "test": "Run the test suite",
+        "lint": "Check code style",
+        "format": "Fix code style",
+        "analyse": "Run static analysis",
+        "check": "Lint, analyse and test: what CI runs",
+        "demo": "Build the static demo site into build/"
+    }
+}

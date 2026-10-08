@@ -1,0 +1,3 @@
+# Lets Larastan boot the package (and see its views) during analysis.
+providers:
+  - Ruvelo\Comments\CommentsServiceProvider
