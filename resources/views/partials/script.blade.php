@@ -105,7 +105,7 @@
             if (card.querySelector('form.comments-inline')) return;
             const form = inlineForm(link.closest('[data-comments]'), 'edit', item.dataset.comment);
             if (!form) return;
-            form.action = link.dataset.commentsEdit;
+            form.setAttribute('action', link.dataset.commentsEdit);
             form.dataset.commentsForm = 'update';
             form.querySelector('[name=parent_id]')?.remove();
             form.insertAdjacentHTML('afterbegin', '<input type="hidden" name="_method" value="PATCH">');
@@ -234,7 +234,7 @@
             setError(form, '');
 
             try {
-                const response = await fetch(form.action, { method: 'POST', headers: headers(form), body, credentials: 'same-origin' });
+                const response = await fetch(form.getAttribute('action'), { method: 'POST', headers: headers(form), body, credentials: 'same-origin' });
                 const data = await response.json().catch(() => ({}));
                 if (response.status === 202) { form.reset(); return; }
                 if (!response.ok) { setError(form, errorFrom(response, data)); return; }

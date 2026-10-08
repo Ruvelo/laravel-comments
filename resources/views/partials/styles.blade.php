@@ -92,6 +92,7 @@
 
     /* The compose box */
     .comments-compose { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .75rem; margin: 0 0 2rem; }
+    .comments-compose > :not(.comments-avatar) { grid-column: 2; }
     .comments-form { min-width: 0; }
     .comments-box { border: 1px solid var(--comments-line); border-radius: var(--comments-radius-lg); background: var(--comments-bg); overflow: hidden; transition: border-color .15s, box-shadow .15s; }
     .comments-box:focus-within { border-color: var(--comments-accent); box-shadow: 0 0 0 3px var(--comments-accent-soft); }
@@ -99,9 +100,9 @@
     .comments-tab { appearance: none; border: 0; background: none; margin: 0 0 -1px; padding: .45rem .75rem; font: 500 .8125rem/1 var(--comments-sans); color: var(--comments-text-3); cursor: pointer; border-radius: 6px 6px 0 0; border: 1px solid transparent; }
     .comments-tab:hover { color: var(--comments-ink); }
     .comments-tab[aria-selected=true] { background: var(--comments-bg); color: var(--comments-ink); border-color: var(--comments-line); border-bottom-color: var(--comments-bg); }
-    .comments-box textarea { display: block; width: 100%; min-height: 6.5rem; margin: 0; padding: .75rem .9rem; border: 0; outline: 0; resize: vertical; background: transparent; color: inherit; font: .9375rem/1.6 var(--comments-sans); }
+    .comments-box textarea { display: block; width: 100%; min-height: 5rem; margin: 0; padding: .75rem .9rem; border: 0; outline: 0; resize: vertical; background: transparent; color: inherit; font: .9375rem/1.6 var(--comments-sans); }
     .comments-box textarea::placeholder { color: var(--comments-text-3); }
-    .comments-preview { min-height: 6.5rem; padding: .75rem .9rem; }
+    .comments-preview { min-height: 5rem; padding: .75rem .9rem; }
     .comments-preview-empty { color: var(--comments-text-3); font-style: italic; }
     .comments-foot { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem .75rem; padding: .5rem .5rem .5rem .9rem; border-top: 1px solid var(--comments-line); background: var(--comments-subtle); }
     .comments-hint { margin: 0; font-size: .75rem; color: var(--comments-text-3); }
@@ -156,7 +157,7 @@
     .comments-prose input[type=checkbox] { accent-color: var(--comments-accent); margin-right: .3rem; }
 
     .comments-actions { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem .25rem; margin-top: .4rem; }
-    .comments-action { appearance: none; display: inline-flex; align-items: center; margin: 0; padding: .25rem .5rem; border: 0; border-radius: 6px; background: none; color: var(--comments-text-3); font: 500 .8125rem/1.2 var(--comments-sans); cursor: pointer; }
+    .comments .comments-action { appearance: none; display: inline-flex; align-items: center; margin: 0; padding: .25rem .5rem; border: 0; border-radius: 6px; background: none; color: var(--comments-text-3); font: 500 .8125rem/1.2 var(--comments-sans); cursor: pointer; }
     .comments .comments-action:hover { background: var(--comments-muted); color: var(--comments-ink); text-decoration: none; }
     .comments-action--danger:hover { color: var(--comments-danger) !important; background: var(--comments-danger-soft) !important; }
     .comments-actions form { display: contents; }
@@ -166,6 +167,7 @@
     span.comments-reaction { cursor: default; }
     button.comments-reaction:hover { border-color: var(--comments-accent); }
     .comments-reaction[aria-pressed=true] { background: var(--comments-accent-soft); border-color: color-mix(in srgb, var(--comments-accent) 55%, transparent); color: var(--comments-accent-ink); }
+    .comments-emoji, .comments-picker-panel button { font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif; }
     .comments-emoji { font-size: .95rem; line-height: 1; }
     .comments-picker { position: relative; }
     .comments-picker > summary { list-style: none; display: inline-flex; align-items: center; justify-content: center; width: 2rem; height: 1.6rem; border: 1px solid var(--comments-line); border-radius: 999px; color: var(--comments-text-3); cursor: pointer; }

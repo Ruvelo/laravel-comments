@@ -29,7 +29,7 @@
             <button type="button" class="comments-tab" role="tab" aria-selected="false" data-comments-tab="preview">Preview</button>
         </div>
         <label class="comments-hp" for="{{ $formId }}-body">{{ $label }}</label>
-        <textarea id="{{ $formId }}-body" name="body" rows="{{ $mode === 'new' ? 4 : 3 }}" maxlength="{{ config('comments.max_length', 5000) }}"
+        <textarea id="{{ $formId }}-body" name="body" rows="3" maxlength="{{ config('comments.max_length', 5000) }}"
                   placeholder="{{ $mode === 'reply' ? 'Write a reply…' : 'Add to the conversation…' }}" required
                   @if ($error) aria-invalid="true" aria-describedby="{{ $formId }}-error" @endif
                   @if ($isCurrent || $mode !== 'new') autofocus @endif>{{ $value }}</textarea>
